@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#373d49">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css?<?= time() ?>">
+</head>
+<body>
+<header class="header">
+    <div class="header__logo">
+        <picture>
+            <source media="(min-width: 1200px)" srcset="assets/img/logo-desktop.png">
+            <source media="(min-width: 768px)" srcset="assets/img/logo-tablet.png">
+            <img src="assets/img/logo-mobile.png" width="500" height="74" alt="logo">
+        </picture>
+    </div>
+    <nav class="nav  nav--closed  nav--nojs">
+        <button class="nav__toggle">Open menu</button>
+        <div class="nav__wrapper">
+            <ul class="nav__list">
+                <li class="nav__item  nav__item--active">
+                    <a>Main</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">Offers</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">Gallery</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">Contacts</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+            <ul class="nav__user-list">
+                <li class="nav__user-item">
+                    <a class="nav__user-login" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="content">
+    <section class="stats">
+        <header class="stats__header">
+            <b class="stats__slogan">
+                Portitor ullamcorper
+            </b>
+            <p class="stats__text">
+                Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante.
+            </p>
+            <small class="stats__legend  stats__legend--top"><sup>*</sup> — aliquam facilisis</small>
+        </header>
+        <table class="stats__table">
+            <tr>
+                <td class="stats__value">1 500 <sup>*</sup></td>
+                <td class="stats__field">$<br> lacus</td>
+            </tr>
+            <tr>
+                <td class="stats__value">7 200</td>
+                <td class="stats__field">sec<br> dolore</td>
+            </tr>
+            <tr>
+                <td class="stats__value">90 000</td>
+                <td class="stats__field">cut<br> feugiat</td>
+            </tr>
+            <tr>
+                <td class="stats__value">500 000 <sup>*</sup></td>
+                <td class="stats__field">likes</td>
+            </tr>
+        </table>
+        <small class="stats__legend  stats__legend--bottom"><sup>*</sup> — aliquam facilisis</small>
+    </section>
+    <section class="advantages">
+        <div class="simple-slider  simple-slider__color">
+            <input id="advsl1" type="radio" name="slider-toggle" checked="">
+            <label for="advsl1"></label>
+            <div class="simple-slider__slide">
+                <div class="simple-slider__img-container">
+                    <img src="assets/img/advantage-1.png" width="95" height="94" alt="speed">
+                </div>
+                <div class="simple-slider__info">
+                    <b class="simple-slider__slogan">Quam</b>
+                    <p class="simple-slider__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante
+                        interdum.
+                    </p>
+                </div>
+            </div>
+            <input id="advsl2" type="radio" name="slider-toggle">
+            <label for="advsl2"></label>
+            <div class="simple-slider__slide">
+                <div class="simple-slider__img-container">
+                    <img src="assets/img/advantage-2.png" width="95" height="88" alt="cool">
+                </div>
+                <div class="simple-slider__info">
+                    <b class="simple-slider__slogan">lorem</b>
+                    <p class="simple-slider__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante
+                        interdum.
+                    </p>
+                </div>
+            </div>
+            <input id="advsl3" type="radio" name="slider-toggle">
+            <label for="advsl3"></label>
+            <div class="simple-slider__slide">
+                <div class="simple-slider__img-container">
+                    <img src="assets/img/advantage-3.png" width="95" height="91" alt="expensive">
+                </div>
+                <div class="simple-slider__info">
+                    <b class="simple-slider__slogan">ipsum</b>
+                    <p class="simple-slider__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante
+                        interdum.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--        <div class="responsive-triangle"></div>-->
+    </section>
+    <section class="news">
+        <div class="news__wrapper">
+            <h2 class="news__title">
+                Ipsum sed dolor
+            </h2>
+            <ul class="news__list">
+                <li class="news__item">
+                    <time>
+                        <span>29</span> sep
+                    </time>
+                    <p class="news__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+                    </p>
+                </li>
+                <li class="news__item">
+                    <time>
+                        <span>19</span> sep
+                    </time>
+                    <p class="news__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+                    </p>
+                </li>
+                <li class="news__item">
+                    <time>
+                        <span>9</span> sep
+                    </time>
+                    <p class="news__text">
+                        Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.
+                    </p>
+                </li>
+            </ul>
+            <a class="news__btn">More</a>
+        </div>
+    </section>
+    <section class="feadbacks">
+        <div class="feadbacks__wrapper">
+            <h2 class="feadbacks__title">reviews</h2>
+            <a class="feadbacks__btn">Leave one</a>
+            <div class="simple-slider">
+                <input id="fdbsl1" type="radio" name="fdbks-toggle" checked="">
+                <label for="fdbsl1"></label>
+                <div class="simple-slider__slide">
+                    <div class="simple-slider__img-container">
+                        <img src="assets/img/fdbks-1.png" width="50" height="49" alt="John Smith">
+                    </div>
+                    <div class="simple-slider__info">
+                        <b class="simple-slider__slogan">John Smith</b>
+                        <p class="simple-slider__text">
+                            Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim
+                            lorem ullamcorper dolore.
+                        </p>
+                    </div>
+                </div>
+                <input id="fdbsl2" type="radio" name="fdbks-toggle">
+                <label for="fdbsl2"></label>
+                <div class="simple-slider__slide">
+                    <div class="simple-slider__img-container">
+                        <img src="assets/img/fdbks-1.png" width="50" height="49" alt="James Brown">
+                    </div>
+                    <div class="simple-slider__info">
+                        <b class="simple-slider__slogan">James Brown</b>
+                        <p class="simple-slider__text">
+                            Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.
+                        </p>
+                    </div>
+                </div>
+                <input id="fdbsl3" type="radio" name="fdbks-toggle">
+                <label for="fdbsl3"></label>
+                <div class="simple-slider__slide">
+                    <div class="simple-slider__img-container">
+                        <img src="assets/img/fdbks-1.png" width="50" height="49" alt="Leo">
+                    </div>
+                    <div class="simple-slider__info">
+                        <b class="simple-slider__slogan">Leo</b>
+                        <p class="simple-slider__text">
+                            Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Sed nulla amet lorem feugiat tempus aliquam.
+                        </p>
+                    </div>
+                </div>
+                <div class="simple-slider__controls">
+                    <label for="fdbsl1"></label>
+                    <label for="fdbsl2"></label>
+                    <label for="fdbsl3"></label>
+                </div>
+            </div>
+            <div class="responsive-triangle"></div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__container">
+        <section class="footer__adress">
+            <b class="footer__title">
+                Barbershop
+            </b>
+            <p class="footer__text">
+                1234 Somewhere Road #8254 Nashville, TN 00000-0000
+            </p>
+            <a class="footer__btn" href="tel:+0000000000">
+                <span class="footer__tel">Phone:</span> (000) 000-0000
+            </a>
+        </section>
+        <section class="footer__social">
+            <b>Get in touch</b>
+            <ul class="social-links">
+                <li class="social-links__link">
+                    <a class="social-links__btn  social-links__btn--vk" target="_blank">
+                    </a>
+                </li>
+                <li class="social-links__link">
+                    <a class="social-links__btn  social-links__btn--fb" target="_blank"></a>
+                </li>
+                <li class="social-links__link">
+                    <a class="social-links__btn  social-links__btn--inst" target="_blank"></a>
+                </li>
+            </ul>
+        </section>
+        <section class="footer__copyright">
+            <small>Developed by:</small>
+            <a class="footer__btn">VNDK</a>
+        </section>
+    </div>
+</footer>
+<script>
+    var nav = document.querySelector(".nav");
+    var nav_toggle = document.querySelector(".nav__toggle");
+    nav.classList.remove("nav--nojs");
+    nav_toggle.addEventListener("click", function () {
+        if (nav.classList.contains("nav--closed")) {
+            nav.classList.remove("nav--closed");
+            nav.classList.add("nav--opened");
+        } else {
+            nav.classList.remove("nav--opened");
+            nav.classList.add("nav--closed");
+        }
+    });
+</script>
+</body>
+</html>

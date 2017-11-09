@@ -1,0 +1,29 @@
+.clearfix {
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
+
+.container {
+	margin: 0 auto; 
+	width: 320px;
+	
+	@media @tablet-widths {
+		width: 640px;
+	}
+	
+	@media @desktop-widths {
+		width: 960px;
+	}
+}
+
+.container-fluid {
+	width: auto;
+	@media @tablet-widths {
+		margin:    0 auto;
+		max-width: 1200px; /*960px/.84=1142px center will start work earlier than 1200px*/
+		width:     84%; /*640px/768px*/
+	}
+}

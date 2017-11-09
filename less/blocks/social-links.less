@@ -1,0 +1,40 @@
+.social-links {
+	.clear-list;
+	display:   flex;	
+	flex-wrap: wrap;
+}
+
+.social-links__link {
+	flex-grow: 1;
+}
+
+.social-links__btn {
+	.btn;
+	border:    1px solid #fff;
+	height:    80px;
+	&--vk {
+		background: url("../assets/img/vk-icon.png") no-repeat center;
+	}	
+	&--fb {
+		background: url("../assets/img/fb-icon.png") no-repeat center;
+	}
+	&--inst {
+		background: url("../assets/img/inst-icon.png") no-repeat center;
+	}
+	
+}
+
+@media @desktop-widths {
+	
+	.social-links__link {
+	  width: 50px;
+		&:not(:last-child) {
+			margin: 0 10px 0 0;
+		}
+  }
+	
+	.social-links__btn {
+	  height: 50px;
+	}
+	
+}

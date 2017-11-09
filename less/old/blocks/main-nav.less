@@ -1,0 +1,346 @@
+.main-nav {
+	background: #826550;
+	min-height: 50px;
+	position:   relative;
+	width:      auto;
+}
+
+.main-nav__toggle {
+	background: #6a4d38;
+	border:     none;
+	cursor:     pointer;
+	font-size:  0;
+	height:     50px;
+	position:   absolute;
+	outline:    none;
+	right:      0;
+	top:        0;	
+	width:      70px;
+	z-index:    2;
+	&:hover {
+		background: #624530;
+	}
+	&:active {
+		background: #624530;
+	}	
+}
+
+.main-nav--closed .main-nav__toggle::before {
+	background: #fff;
+	box-shadow: 0 8px 0 0 #fff,
+		          0 16px 0 0 #fff; 
+	content:    "";
+	height:     2px;
+	left:       17px;
+	position:   absolute;
+	top:        15px;
+	width:      36px;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+	background: rgba(255, 255, 255, .3);
+	box-shadow: 0 8px 0 0 rgba(255, 255, 255, .3),
+		          0 16px 0 0 rgba(255, 255, 255, .3); 
+}
+
+.main-nav--opened .main-nav__toggle {
+	left: 0;
+	top:  0;
+	&::before,
+	&::after {
+		background: #fff;
+		content:    "";
+		height:     2px;
+		left:       18px;
+		position:   absolute;
+		top:        24px;
+		width:      36px;
+	}
+	&::before {
+		transform: rotate(45deg);
+	}
+	&::after {
+		transform: rotate(-45deg);
+	}	
+	&:active::before,
+	&:active::after {
+		background: rgba(255, 255, 255, .3);
+	}
+}
+
+.main-nav__items,
+.main-nav__user-items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-nav__items {
+	font-weight: bold;
+}
+
+.main-nav__user-items {
+
+}
+
+.main-nav__item a {
+	background: #826550;
+	border-bottom:   1px solid #71543f;
+	border-top:      1px solid #886e5b;
+	color:           #fff;
+	display:         block;
+	font-size:       18px;
+	line-height:     24px;
+	padding:         12px 21px 13px;
+	text-decoration: none;
+	text-transform:  uppercase;
+}
+
+.main-nav__item a[href] {
+	&:hover {
+		background: #755a46;
+	}
+	&:active {
+		color:      rgba(255, 255, 255, .3);
+		background: #6a4d38;
+		border-top: 1px solid #6a4d38;
+	}
+}
+
+.main-nav__user-login {
+	color:           #fff;
+	display:         block;
+	line-height:     18px;
+	padding:         17px 21px 17px 49px;
+	position:        relative;
+	text-decoration: none;
+	&:before {
+		background: url("../assets/img/icon-login.png") -10px -82px;
+		content:    "";
+		height:     16px;
+		left:       21px;
+		opacity:    .3;
+		position:   absolute;
+		top:        17px;
+		width:      16px;
+	}
+}
+
+@media @mobile-widths-only {
+	.main-nav--closed .main-nav__item:not(.main-nav__item--active) {
+		display: none;
+	}
+	
+	
+	.main-nav--closed .main-nav__item--active a {
+		padding:    12px 70px 13px;
+		text-align: center;
+	}
+	
+	.main-nav--closed .main-nav__user-items {
+		display: none;
+	}
+	
+	.main-nav--opened .main-nav__wrapper {
+		background: #6a4d38; 
+		height:     80vh;
+		left:       70px;
+		position:   absolute;
+		right:      0;
+		top:        0;
+		z-index:    10;
+	}
+	
+	.main-nav--opened .main-nav__wrapper::before {
+		box-shadow: 4px 0 7px -2px rgba(0, 0, 0, .4) inset;
+		content:    "";
+		height:     100%;
+		left:       0;
+		position:   absolute;
+		top:        0;
+		width:      7px;
+		z-index:    2;
+	}
+	
+	.main-nav--nojs .main-nav__toggle {
+		display: none;
+	}
+	
+	.main-nav--nojs .main-nav__wrapper {
+		height:   auto;
+		position: static;
+	}
+	
+	.main-nav--nojs .main-nav__item {
+		display: block !important;
+	}
+	
+	.main-nav--nojs .main-nav__user-items {
+		display: block;
+	}
+	
+	.main-nav--nojs .main-nav__item--active a {
+		padding:    12px 21px 13px;
+		text-align: left;
+	}
+	
+	.main-nav--nojs user__items {
+		background: #6a4d38;
+		display:    block;
+	}
+}
+
+
+@media @tablet-widths {
+	.main-nav {
+		background: #000;
+	  margin:     0;
+		min-height: 70px;
+	  width:      auto;
+  }
+	
+	.main-nav__wrapper {
+		.container-fluid;
+		display:         flex;
+		justify-content: space-between;
+	}
+	
+	.main-nav__toggle {
+		display: none;
+	}
+	
+	.main-nav__items {
+		display:   flex;
+		flex-grow: 1;		
+		flex-wrap: wrap;
+  }
+	
+	.main-nav__item {
+		&:not(:last-child) {
+			margin: 0 32px 0 0;
+		}
+
+		&--active {
+			position: relative;
+			&::after {
+				bottom: -3px;
+				content: "";
+				position: absolute;
+				right: 0;
+				left: 0;
+				height: 3px;
+				background: #B26550;
+			}
+		}
+  }
+	
+	.main-nav__item a {
+		background: none;
+		border:     none;
+		padding:    25px 0 23px;
+		&[href] {
+			&:hover {
+				background: #000;
+				color:      #826550;
+			}
+			&:active {
+				background: #000;
+				border:     none;
+				color:      #fff;
+				opacity:    .3;
+			}			
+		}
+  }
+	
+
+  .main-nav__user-items {
+  }
+	
+	.main-nav__user-login {
+		font-size:  0;
+	  height:     70px;
+		padding:    0;
+		width:      60px;
+		
+		&::before {
+			left: 12px;
+			top:  29px;
+		}
+		&:hover::before {
+			background: url("../assets/img/icon-login.png") -10px -46px;//?
+			opacity:    1;
+		}
+		&:active::before {
+			background: url("../assets/img/icon-login.png") -10px -82px;
+			opacity:    .3;
+		}
+  }
+}
+
+@media @desktop-widths {
+	.main-nav__items {
+  }
+	
+	.main-nav__item {
+		margin: 0 !important;//? make without :not selector
+		&--active::after {
+			left:  30px;
+			right: 30px;
+		}
+	}
+	
+	.main-nav__item a {
+		background: none;
+		border:     none;
+		padding:    25px 31px 23px;
+		&[href] {
+			&:hover {
+				background: #fff;
+				color:      #000;
+			}
+			&:active {
+				background: #fff;
+				border:     none;
+				color:      rgba(0, 0, 0, .3);
+				opacity:    1;
+			}			
+		}
+  }
+
+  .main-nav__user-items {
+		max-width: 160px;
+		with:      auto;
+  }
+	
+	.main-nav__user-login {
+		font-size:       18px;
+		font-weight:     bold;
+	  height:          auto;
+		line-height:     24px;
+		padding:         25px 30px 23px 50px;
+		position:        relative;
+		text-decoration: none;
+		text-transform:  uppercase;
+		width:           auto;
+		
+		&::before {
+			left: 15px;
+		}		
+		&:hover {
+			background: #fff;
+			color:      #000;
+		}
+		&:active {
+			background: #fff;
+			color:      rgba(0, 0, 0, .3);
+		}
+		&:hover::before {
+			background: url("../assets/img/icon-login.png") -10px -10px;//?
+			opacity:    1;
+		}
+		&:active::before {
+			background: url("../assets/img/icon-login.png") -10px -10px;
+			opacity:    .1;
+		}
+  }
+}

@@ -1,0 +1,257 @@
+.nav {
+  background:     #826550;
+  font-family:    'Source Sans Pro', serif;
+  font-weight:    700;
+  line-height:    25px;
+  position:       relative;
+  text-transform: uppercase;
+}
+
+.nav a {
+  .links;
+  padding:        13px 20px;
+  text-transform: uppercase;
+  &[href] {
+    &:hover {
+      background: #755a46;
+    }
+    &:active {
+      color:      rgba(255, 255, 255, .3);
+      background: #6a4d38;
+    }
+  }
+}
+
+.nav__list,
+.nav__user-list {
+  .clear-list;
+}
+
+.nav__toggle {
+  .toggle;
+  background: #6a4d38;
+  height:     50px;
+  position:   absolute;
+  right:      0;
+  top:        0;
+  width:      70px;
+}
+
+.nav .nav__user-login {
+  .links;
+  line-height:    24px;
+  padding:        13px 20px 13px 50px;
+  position:       relative;
+  text-transform: uppercase;
+  &::before {
+    background: url("../assets/img/icon-login.png");
+    content:    "";
+    height:     16px;
+    left:       21px;
+    opacity:    .3;
+    position:   absolute;
+    top:        17px;
+    width:      16px;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+@media @mobile-widths-only {
+
+  .nav--opened .nav__wrapper {
+    background: #6a4d38;
+    left:       70px;
+    position:   absolute;
+    right:      0;
+    z-index:    2;
+    &::before {
+      box-shadow: 8px 0 7px -4px rgba(0, 0, 0, .3) inset;
+      content:    "";
+      height:     100%;
+      left:       0;
+      position:   absolute;
+      top:        0;
+      width:      25px;
+      z-index:    3;
+    }
+  }
+
+  .nav--opened .nav__list {
+    background: #826550;
+  }
+
+  .nav--opened .nav__item {
+    &:not(:first-child) {
+      border-top: 1px solid #886e5b;
+    }
+    &:nth-child(n+2) {
+      border-top: 1px solid #886e5b;
+      &:hover {
+        border-top: 1px solid #755a46;
+      }
+      &:active {
+        border-top: 1px solid #6a4d38;
+      }
+    }
+    border-bottom: 1px solid #71543f;
+  }
+
+  .nav--closed .nav__item {
+    &--active a {
+      text-align: center;
+    }
+  }
+
+  .nav--closed .nav__item:nth-child(n+2),
+  .nav--closed .nav__user-list {
+    display: none;
+  }
+
+  .nav--closed .nav__toggle {
+    &::before {
+      background: #fff;
+      box-shadow: 0 8px 0 .1px #fff,
+                    0 -8px 0 .1px #fff;
+      content:    "";
+      height:     2px;
+      left:       50%;
+      position:   absolute;
+      top:        50%;
+      transform:  translate(-50%, -50%);
+      width:      36px;
+    }
+  }
+
+  .nav--opened .nav__toggle {
+    left:     0;
+    position: absolute;
+    &::after,
+    &::before {
+      background: #fff;
+      content:    "";
+      height:     2px;
+      left:       50%;
+      position:   absolute;
+      top:        50%;
+      transform:  translate(-50%, -50%) rotate(45deg);
+      width:      36px;
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  .nav--nojs .nav__toggle {
+    display: none;
+  }
+
+  //better without hover??
+  //.nav--nojs .nav__item:nth-child(n+2),
+  //.nav--nojs .nav__user-list {
+  //	display: block;
+  //}
+  //better with hover??
+  .nav--nojs:hover {
+    & .nav__item:nth-child(n+2),
+    & .nav__user-list {
+      display: block;
+    }
+  }
+
+  .nav--nojs .nav__item {
+    &--active a {
+      text-align: left;
+    }
+  }
+}
+
+@media @tablet-widths {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav {
+    background: rgba(55, 61, 73, 0.975);
+  }
+
+  .nav__wrapper {
+    .container-fluid;
+    display: flex;
+  }
+
+  .nav__list {
+    display:   flex;
+    flex-grow: 1;
+  }
+
+  .nav__user-list {
+    font-size: 0;
+  }
+
+  .nav__item {
+    &:not(:last-child) {
+      margin: 0 32px 0 0;
+    }
+  }
+
+  .nav a {
+    .links;
+    padding: 15px 0;
+    &[href] {
+      &:hover {
+        color:      #755a46;
+        background: transparent;
+      }
+      &:active {
+        color:      #6a4d38;
+        background: transparent;
+      }
+    }
+  }
+
+  .nav .nav__user-login {
+    &::before {
+      top: 19px;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+}
+
+@media @desktop-widths {
+
+  .nav .nav__user-login {
+    font-size:      16px;
+    line-height:    25px;
+    padding:        15px 32px 15px 50px;
+    text-transform: uppercase;
+  }
+
+  .nav__item {
+    &:not(:last-child) {
+      margin: 0;
+    }
+  }
+
+  .nav a {
+    .links;
+    padding: 15px 32px;
+    &[href] {
+      &:hover {
+        color:      #3c3b3b;
+        background: #fff;
+      }
+      &:active {
+        color:      #6a4d38;
+        background: #fff;
+      }
+    }
+  }
+
+  .nav .nav__user-login {
+    //another color of login icon
+  }
+}
