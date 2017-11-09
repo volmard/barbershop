@@ -1017,7 +1017,7 @@ img {
     display: block;
   }
   [type="radio"]:checked + label {
-    background: #3c3b3b;
+    background: #fff;
     box-shadow: 0 0 0 2px #a5a5a5;
   }
   .simple-slider > label {
@@ -1306,7 +1306,7 @@ img {
   font-size: 18px;
 }
 .feadbacks [type="radio"]:checked + label {
-  background: #292929;
+  background: #3c3b3b;
 }
 @media (min-width: 768px) {
   .feadbacks__wrapper {
